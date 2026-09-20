@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         }
         
         // Remove PW/Vedstudy specific titles if needed
-        html = html.replace(/<title>(.*?)vedstudy<\/title>/gi, '<title>$1Mod Galaxy</title>');
+        html = html.replace(/<title>(.*?)vedstudy<\/title>/gi, '<title>$1AURA MAX</title>');
         
         res.setHeader('Content-Type', 'text/html');
         res.setHeader('Cache-Control', 'no-store, max-age=0');
