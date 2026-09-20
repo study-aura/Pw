@@ -1,7 +1,7 @@
 {
-  "name": "as-multiverse",
+  "name": "AURA MAX",
   "version": "1.0.0",
-  "description": "As Multiverse — Educational Streaming Platform",
+  "description": "AURA MAX — Educational Streaming Platform",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
