@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Batches — Mod Galaxy</title>
+    <title>Batches — AURA MAX</title>
     <link rel="icon" type="image/png" href="/static/site_logo.png">
     <link rel="manifest" id="manifest-placeholder">
-    <meta name="application-name" content="Mod Galaxy">
+    <meta name="application-name" content="AURA MAX">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Mod Galaxy">
+    <meta name="apple-mobile-web-app-title" content="AURA MAX">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#0f172a">
     <link rel="apple-touch-icon" href="/static/site_logo.png">
@@ -62,24 +62,9 @@
             letter-spacing: 0.3px;
         }
 
-        .site-brand .brand-icon {
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 7px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: 900;
-            color: #fff;
-            flex-shrink: 0;
-        }
-
         .site-brand .brand-name {
             color: #f1f5f9;
         }
-
 
         .countdown-timer {
             display: none;
@@ -154,7 +139,7 @@
             font-size: 16px;
         }
 
-.autocomplete-dropdown {
+        .autocomplete-dropdown {
             position: absolute;
             top: 100%; left: 0; right: 0;
             background: #1e293b;
@@ -330,8 +315,7 @@
             gap: 4px;
             background: rgba(245, 158, 11, 0.15);
             border: 1px solid rgba(245, 158, 11, 0.4);
-
-color: #f59e0b;
+            color: #f59e0b;
             font-size: 11px;
             font-weight: 700;
             padding: 3px 8px;
@@ -511,8 +495,7 @@ color: #f59e0b;
         }
 
         .spinner {
-
-width: 40px; height: 40px;
+            width: 40px; height: 40px;
             border: 4px solid rgba(99, 102, 241, 0.2);
             border-top: 4px solid #6366f1;
             border-radius: 50%;
@@ -659,8 +642,7 @@ width: 40px; height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-
-flex-shrink: 0;
+            flex-shrink: 0;
             transition: transform 0.1s;
         }
 
@@ -781,7 +763,7 @@ flex-shrink: 0;
     <div class="header">
         <div class="site-brand">
             <img src="/static/site_logo.png" style="width:28px;height:28px;border-radius:7px" alt="ASM">
-            <div class="brand-name">Mod Galaxy</div>
+            <div class="brand-name">AURA MAX</div>
         </div>
         <div class="countdown-timer" id="countdownTimer">
             ⏱ <span id="countdownTime">--:--:--</span>
@@ -817,7 +799,7 @@ flex-shrink: 0;
         <div id="totalBatches"    class="batches-grid"></div>
         <div id="favouriteBatches" class="batches-grid" style="display:none;"></div>
 
-<div id="loading"          class="loading-spinner" style="display:none;">
+        <div id="loading"          class="loading-spinner" style="display:none;">
             <div class="spinner"></div>
         </div>
     </div>
@@ -826,7 +808,7 @@ flex-shrink: 0;
         <div class="popup-content">
             <button class="popup-close" id="popupClose">✕</button>
             <div class="popup-icon">📢</div>
-            <div class="popup-title">Join Mod Galaxy!</div>
+            <div class="popup-title">Join AURA MAX!</div>
             <div class="popup-desc">Stay updated with latest study materials</div>
             <button class="telegram-btn" id="popupJoin">Join Telegram Channel</button>
         </div>
@@ -883,7 +865,15 @@ flex-shrink: 0;
     </div>
 
     <script>
-        (function(){var e=localStorage.getItem('asm_access_expiry');if(!e||Date.now()>parseInt(e)){localStorage.removeItem('asm_access_expiry');window.location.href='/get-access';return;}})();
+        (function(){
+            var e = localStorage.getItem('asm_access_expiry');
+            if(!e || Date.now() > parseInt(e)){
+                localStorage.removeItem('asm_access_expiry');
+                window.location.href = 'get-access.html';
+                return;
+            }
+        })();
+
         const SITE_THUMBNAIL = '/static/site_thumbnail.png';
         let ALL_BATCHES       = [];
         let DISPLAYED_BATCHES = [];
@@ -915,8 +905,7 @@ flex-shrink: 0;
             loading:             document.getElementById("loading"),
             errorBox:            document.getElementById("errorBox"),
             errorTitle:          document.getElementById("errorTitle"),
-
-errorMessage:        document.getElementById("errorMessage"),
+            errorMessage:        document.getElementById("errorMessage"),
             searchBtn:           document.getElementById("searchBtn"),
             totalTab:            document.getElementById("totalTab"),
             favouriteTab:        document.getElementById("favouriteTab"),
@@ -1017,8 +1006,7 @@ errorMessage:        document.getElementById("errorMessage"),
             const matches = [];
             query.trim().split(/\s+/).forEach(p => {
                 if (!p) return;
-
-const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+                const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
                 let m;
                 while ((m = re.exec(text)) !== null) {
                     matches.push({ start: m.index, end: m.index + m[0].length });
@@ -1116,8 +1104,7 @@ const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
                                 <div class="date-item">Start On ${escapeHTML(batch.startDate)}</div>
                                 <div class="date-item">End On ${escapeHTML(batch.endDate)}</div>
                             </div>
-
-` : ""}
+                        ` : ""}
 
                         ${renderPriceHTML(batch.feeTotal)}
 
@@ -1221,8 +1208,7 @@ const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
 
             el.mahapackGrid.innerHTML = subBatches
                 .map(sub => buildBatchCard(sub, false))
-
-.join("");
+                .join("");
         }
 
         let mahapackSearchTimeout;
@@ -1259,7 +1245,7 @@ const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
                 const batchName = batchEl.dataset.name;
                 if (batchId) {
                     const params = new URLSearchParams({ batchId, batchName });
-                    window.location.href = "/subjects?" + params.toString();
+                    window.location.href = "subjects.html?" + params.toString();
                 }
             }
         };
@@ -1286,7 +1272,7 @@ const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
             } else {
                 if (batchId) {
                     const params = new URLSearchParams({ batchId, batchName });
-                    window.location.href = "/subjects?" + params.toString();
+                    window.location.href = "subjects.html?" + params.toString();
                 }
             }
         }
@@ -1331,7 +1317,7 @@ const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
                 .finally(() => { state.loading = false; });
         }
 
-function loadMoreBatches() {
+        function loadMoreBatches() {
             if (state.loading || state.isSearchMode || state.displayedCount >= ALL_BATCHES.length) return;
             const next = ALL_BATCHES.slice(state.displayedCount, state.displayedCount + BATCH_SIZE);
             if (!next.length) return;
@@ -1433,7 +1419,7 @@ function loadMoreBatches() {
             state.searchQuery = term;
             el.autocomplete.classList.remove("show");
 
-hideError();
+            hideError();
             el.content.scrollTop = 0;
 
             if (!state.allBatchesLoaded) {
@@ -1544,8 +1530,7 @@ hideError();
                     : state.highlightedIndex - 1;
                 items[state.highlightedIndex].classList.add("highlighted");
                 items[state.highlightedIndex].scrollIntoView({ block: "nearest" });
-
-} else if (e.key === "Escape") {
+            } else if (e.key === "Escape") {
                 el.autocomplete.classList.remove("show");
             }
         };
@@ -1592,16 +1577,14 @@ hideError();
         el.totalTab.onclick     = () => switchTab("total");
         el.favouriteTab.onclick = () => switchTab("favourite");
         el.popupClose.onclick   = () => { el.telegramPopup.style.display = "none"; };
-        el.popupJoin.onclick    = () => { el.telegramPopup.style.display = "none"; window.open("#", "_blank"); };
+        el.popupJoin.onclick    = () => { el.telegramPopup.style.display = "none"; window.open("https://t.me/your_channel", "_blank"); };
 
         document.getElementById("countdownTimer").onclick = () => {
             document.getElementById("resetKeyPopup").style.display = "flex";
         };
 
-
-
         function resetKey() {
-            window.location.href = "/reset-key";
+            window.location.href = "reset-key.html";
         }
 
         function initialize() {
@@ -1612,12 +1595,6 @@ hideError();
         }
 
         document.addEventListener("DOMContentLoaded", initialize);
-
-
     </script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"d791bbf0a81b4e638ace830305588120","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0927b408bb0ccb8',t:'MTc4MTAzMjY5OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
-
+</body>
+    </html>
