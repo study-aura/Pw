@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Content — Mod Galaxy</title>
+<title>Content — AURA MAX</title>
 <link rel="icon" type="image/png" href="/static/site_logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;outline:none;-webkit-tap-highlight-color:transparent;user-select:none}
@@ -53,7 +53,7 @@ const BATCH_ID=QS.get('batchId')||'',SUBJECT_ID=QS.get('subjectId')||'';
 const BATCH_NAME=QS.get('batchName')||'',SUBJECT_NAME=QS.get('subjectName')||'';
 if(!BATCH_ID||!SUBJECT_ID)location.href='/';
 document.getElementById('back-label').textContent=SUBJECT_NAME||'Subjects';
-document.title = (SUBJECT_NAME||'Content')+' — Mod Galaxy';
+document.title = (SUBJECT_NAME||'Content')+' — AURA MAX';
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function ep(v){return encodeURIComponent(v||'')}
