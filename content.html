@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Content — Mod Galaxy</title>
+<title>Content — AURA MAX</title>
 <link rel="icon" type="image/png" href="/static/site_logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;outline:none;-webkit-tap-highlight-color:transparent;user-select:none}
@@ -53,12 +53,12 @@ const BATCH_ID=QS.get('batchId')||'',SUBJECT_ID=QS.get('subjectId')||'';
 const BATCH_NAME=QS.get('batchName')||'',SUBJECT_NAME=QS.get('subjectName')||'';
 if(!BATCH_ID||!SUBJECT_ID)location.href='/';
 document.getElementById('back-label').textContent=SUBJECT_NAME||'Subjects';
-document.title = (SUBJECT_NAME||'Content')+' — Mod Galaxy';
+document.title = (SUBJECT_NAME||'Content')+' — AURA MAX';
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function ep(v){return encodeURIComponent(v||'')}
 
-const PW_HDR={"Accept-Encoding": "gzip", "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 11; SM-A707F Build/RP1A.200720.012)", "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3ODE2Mzc3NjAuNzMsImRhdGEiOnsiX2lkIjoiNjdjNDI0NDFhMzY1YjFmM2YzNzc2MjEwIiwidXNlcm5hbWUiOiI5MDU0MDEzNDkyIiwiZmlyc3ROYW1lIjoiTWsgTW9taW4iLCJsYXN0TmFtZSI6IiIsIm9yZ2FuaXphdGlvbiI6eyJfaWQiOiI1ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODkiLCJ3ZWJzaXRlIjoicGh5c2ljc3dhbGxhaC5jb20iLCJuYW1lIjoiUGh5c2ljc3dhbGxhaCJ9LCJlbWFpbCI6Ik1LTUtAR01BSUwuQ09NIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwianRpIjoiUGhkZ1FjMF9SbmFCSXh2andFVVhLd182N2M0MjQ0MWEzNjViMWYzZjM3NzYyMTAiLCJpYXQiOjE3ODEwMzI5NjB9.6EVeizpD7Gq-4lsEU7Quz95p3GAlYOLeu_gl_7bUnm0", "client-id": "ADMIN", "client-type": "MOBILE", "client-version": "538", "content-type": "application/json", "device-meta": "{\"APP_VERSION\":\"538\",\"APP_VERSION_NAME\":\"15.32.0\",\"DEVICE_MAKE\":\"Samsung\",\"DEVICE_MODEL\":\"SM-A707F\",\"OS_VERSION\":\"11\",\"PACKAGE_NAME\":\"xyz.penpencil.physicswala\",\"network\":\"wifi_data\",\"carrier\":\"UNDEFINED\"}", "randomid": "3d3b49f068728fa3", "referer": "https://android.pw.live"};
+const PW_HDR={"Accept-Encoding": "gzip", "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 11; SM-A707F Build/RP1A.200720.012)", "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3ODE2Mzc3NjAuNzMsImRhdGEiOnsiX2lkIjoiNjdjNDI0NDFhMzY1YjFmM2YzNzc2MjEwIiwidXNlcm5hbWUiOiI5MDU0MDEzNDkyIiwiZmlyc3ROYW1lIjoiTWsgTW9taW4iLCJsYXN0TmFtZSI6IiIsIm9yZ2FuaXphdGlvbiI6eyJfaWQiOiI1ZWIzOTNlZTk1ZmFiNzQ2OGE3OWQxODkiLCJ3ZWJzaXRlIjoicGh5c2ljc3dhbGxhaC5jb20iLCJuYW1lIjoiUGh5c2ljc3dhbGxhaCJ9LCJlbWFpbCI6Ik1LTUtAR01BSUwuQ09NIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwianRpIjoiUGhkZ1FjMF9SbmFCSXh2andFVVhLd182N2M0MjQ0MWEzNjViMWYzZjM3NzYyMTAiLCJpYXQiOjE3ODE0MzI5NjB9.6EVeizpD7Gq-4lsEU7Quz95p3GAlYOLeu_gl_7bUnm0", "client-id": "ADMIN", "client-type": "MOBILE", "client-version": "538", "content-type": "application/json", "device-meta": "{\"APP_VERSION\":\"538\",\"APP_VERSION_NAME\":\"15.32.0\",\"DEVICE_MAKE\":\"Samsung\",\"DEVICE_MODEL\":\"SM-A707F\",\"OS_VERSION\":\"11\",\"PACKAGE_NAME\":\"xyz.penpencil.physicswala\",\"network\":\"wifi_data\",\"carrier\":\"UNDEFINED\"}", "randomid": "3d3b49f068728fa3", "referer": "https://android.pw.live"};
 async function pw(url){return fetch(url,{headers:PW_HDR}).then(r=>r.json());}
 
 let page=1,loading=false,done=false;
