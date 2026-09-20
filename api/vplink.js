@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing url parameter' });
   }
 
-  const API_TOKEN = 'bb0082e0ede156f2a39bf274f943aa567155b660';
+  const API_TOKEN = '6eaee48971cfe32c69479bc0c517f03142cefc47';
 
   try {
     const vpRes = await fetch(
