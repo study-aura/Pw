@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Test — Mod Galaxy</title>
+<title>Test — AURA MAX</title>
 <link rel="icon" type="image/png" href="/static/site_logo.png">
 <style>
 body{font-family:Inter,sans-serif;background:#0f172a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center;}
 h1{color:#818cf8;margin-bottom:10px;}
 p{color:#94a3b8;margin-bottom:20px;}
-a{color:#fff;background:#6366f1;text-decoration:none;padding:10px 20px;border-radius:8px;font-weight:bold;}
+button{color:#fff;background:#6366f1;border:none;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer;font-size:16px;}
 </style>
 </head>
 <body>
 <script>
-(function(){var e=localStorage.getItem('asm_access_expiry');if(!e||Date.now()>parseInt(e)){localStorage.removeItem('asm_access_expiry');window.location.href='/get-access';return;}})();
+(function(){
+    var e = localStorage.getItem('asm_access_expiry');
+    if (!e || Date.now() > parseInt(e)) {
+        localStorage.removeItem('asm_access_expiry');
+        window.location.href = 'get-access.html';
+        return;
+    }
+})();
 </script>
 <h1>Test Interface</h1>
-<p>The test engine is currently being integrated into Mod Galaxy.</p>
-<button onclick="history.back()" style="color:#fff;background:#6366f1;border:none;padding:10px 20px;border-radius:8px;font-weight:bold;cursor:pointer;font-size:16px;">Go Back</button>
+<p>The test engine is currently being integrated into AURA MAX.</p>
+<button onclick="history.back()">Go Back</button>
 </body>
 </html>
