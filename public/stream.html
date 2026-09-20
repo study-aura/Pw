@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Stream â€” Mod Galaxy</title>
+<title>Stream — AURA MAX</title>
 <link rel="icon" type="image/png" href="/static/site_logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;outline:none;-webkit-tap-highlight-color:transparent;user-select:none}
@@ -103,8 +103,8 @@ const INIT_SEC     = QS.get('section')    ||'videos';
 
 if(!BATCH_ID||!SUBJECT_ID||!CHAPTER_ID) location.href='/';
 document.getElementById('back-label').textContent = CHAPTER_NAME||'Chapters';
-const SITE_NAME='Mod Galaxy';
-document.title = (CHAPTER_NAME||'Content')+' â€” '+SITE_NAME;
+const SITE_NAME='AURA MAX';
+document.title = (CHAPTER_NAME||'Content')+' — '+SITE_NAME;
 
 const PW_HDR={"Accept-Encoding": "gzip", "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 11; SM-A707F Build/RP1A.200720.012)", "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3ODE2Mzc4NDEuODc5LCJkYXRhIjp7Il9pZCI6IjY3YzQyNDQxYTM2NWIxZjNmMzc3NjIxMCIsInVzZXJuYW1lIjoiOTA1NDAxMzQ5MiIsImZpcnN0TmFtZSI6Ik1rIE1vbWluIiwibGFzdE5hbWUiOiIiLCJvcmdhbml6YXRpb24iOnsiX2lkIjoiNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5Iiwid2Vic2l0ZSI6InBoeXNpY3N3YWxsYWguY29tIiwibmFtZSI6IlBoeXNpY3N3YWxsYWgifSwiZW1haWwiOiJNS01LQEdNQUlMLkNPTSIsInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImp0aSI6IkwxLUZVMHBKUVJLLTNJdk5Bc0hmeGdfNjdjNDI0NDFhMzY1YjFmM2YzNzc2MjEwIiwiaWF0IjoxNzgxMDMzMDQxfQ.FKDjem4aF9Y3fRg6zuHw24QetKcCzjd8qTruYHvpdWM", "client-id": "ADMIN", "client-type": "MOBILE", "client-version": "538", "content-type": "application/json", "device-meta": "{\"APP_VERSION\":\"538\",\"APP_VERSION_NAME\":\"15.32.0\",\"DEVICE_MAKE\":\"Samsung\",\"DEVICE_MODEL\":\"SM-A707F\",\"OS_VERSION\":\"11\",\"PACKAGE_NAME\":\"xyz.penpencil.physicswala\",\"network\":\"wifi_data\",\"carrier\":\"UNDEFINED\"}", "randomid": "3d3b49f068728fa3", "referer": "https://android.pw.live"};
 async function pw(url){return fetch(url,{headers:PW_HDR}).then(r=>r.json());}
@@ -119,7 +119,7 @@ function saveC(d){localStorage.setItem(CK,JSON.stringify(d))}
 function toggleC(ev,id,name){
     ev.preventDefault();ev.stopPropagation();if(!id)return;
     const c=getC(),btn=ev.currentTarget;
-    if(c[id]){delete c[id];btn.classList.remove('done');}else{c[id]=true;btn.classList.add('done');showMsg('ðŸŽ‰ Congratulations!\n'+name);}
+    if(c[id]){delete c[id];btn.classList.remove('done');}else{c[id]=true;btn.classList.add('done');showMsg('🎉 Congratulations!\n'+name);}
     saveC(c);
 }
 function initComplete(panel){
@@ -148,7 +148,7 @@ function removeBottomSkels(panel){
 }
 
 function showComingSoon(panel){
-    panel.innerHTML=`<div class="coming-soon"><div class="cs-icon">ðŸš€</div><div class="cs-text">Coming Soon</div><div class="cs-sub">Content will be available soon!</div></div>`;
+    panel.innerHTML=`<div class="coming-soon"><div class="cs-icon">🚀</div><div class="cs-text">Coming Soon</div><div class="cs-sub">Content will be available soon!</div></div>`;
 }
 
 function buildVideoItem(item){
@@ -187,7 +187,7 @@ function buildNoteItems(item, isDpp){
             const li=document.createElement('li');
             li.className='content-item';
             li.innerHTML=`<a class="content-link" href="${esc(href)}" onclick="localStorage.setItem('asm_current_item', decodeURIComponent('${encodeURIComponent(JSON.stringify(item))}'))">
-                <div class="pdf-box">ðŸ“„</div>
+                <div class="pdf-box">📄</div>
                 <div class="content-details">
                     <div class="content-name">${esc(name)}</div>
                     <div class="content-meta">${date?`<span>${esc(date)}</span>`:''}</div>
@@ -208,7 +208,7 @@ function buildDppItem(item){
     li.innerHTML=`<a class="dpp-link" href="${esc(href)}">
         <div class="dpp-content">
             <div class="dpp-name">${esc(test.name||'DPP Quiz')}</div>
-            <div class="dpp-meta"><span>ðŸ“‹ ${test.totalQuestions||0} questions</span><span style="margin:0 2px">â€¢</span><span>${test.totalMarks||0} Marks</span>${test.maxDuration?`<span style="margin:0 2px">â€¢</span><span>${test.maxDuration} Mins</span>`:''}</div>
+            <div class="dpp-meta"><span>📋 ${test.totalQuestions||0} questions</span><span style="margin:0 2px">•</span><span>${test.totalMarks||0} Marks</span>${test.maxDuration?`<span style="margin:0 2px">•</span><span>${test.maxDuration} Mins</span>`:''}</div>
         </div>
         <div class="dpp-play"><div class="play-btn"><div class="play-icon"></div></div><span class="dpp-tag">${esc(item.tag||'Start')}</span></div>
     </a>`;
